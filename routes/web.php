@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', \App\Http\Livewire\TeamMember\Index::class)->name('index');
+Route::get('/team-members/create', \App\Http\Livewire\TeamMember\Create::class)->name('create');
+Route::get('/team-members/{teamMember}/edit', \App\Http\Livewire\TeamMember\Update::class)->name('edit');
